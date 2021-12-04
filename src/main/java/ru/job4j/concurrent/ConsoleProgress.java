@@ -4,9 +4,9 @@ public class ConsoleProgress implements Runnable {
     @Override
     public void run() {
         try {
+            char[] process = new char[] {'-', '\\','|', '/'};
             int index = 0;
             while (!Thread.currentThread().isInterrupted()) {
-                char[] process = new char[] {'-', '\\','|', '/'};
                 System.out.print("\r load: " + process[index++]);
                 if (index == process.length) {
                     index = 0;
