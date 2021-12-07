@@ -25,11 +25,11 @@ public class ParseFile {
         return stringBuilder;
     }
 
-    public StringBuilder getContent() throws IOException {
+    public synchronized StringBuilder getContent() throws IOException {
         return content(data -> true);
     }
 
-    public StringBuilder getContentWithoutUnicode() throws IOException {
+    public synchronized StringBuilder getContentWithoutUnicode() throws IOException {
         return content(data -> data < 0x80);
     }
 }
