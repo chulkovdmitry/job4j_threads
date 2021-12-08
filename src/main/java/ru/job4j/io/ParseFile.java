@@ -10,7 +10,7 @@ public class ParseFile {
         this.file = file;
     }
 
-    public StringBuilder content(Predicate<Character> filter) {
+    private StringBuilder content(Predicate<Character> filter) {
         StringBuilder stringBuilder = new StringBuilder();
         try (BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(file))) {
             int data;
